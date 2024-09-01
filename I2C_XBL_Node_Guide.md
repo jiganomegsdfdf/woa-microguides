@@ -5,7 +5,7 @@
 <br><br>if core_base_addr = <0x900000>, @* = 0x1 + count
 <br>if core_base_addr = <0x800000>, @* = 0x13 + count
 <br>if core_base_addr = <0xA00000>, @* = 0xF + count
-<br>Also, name of your node will be i2c_device_config_**"Same number as reg/@**
+<br>Also, name of your node will be i2c_device_config_**"Same number as reg/@"**
 ---
 2. To get **"reg"** - you need to look at number after **"@"** in your **i2c_device_config_*** node
 ---
