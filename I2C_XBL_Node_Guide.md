@@ -20,7 +20,7 @@
 ---
 10. To get **i2c_hub** - look for another **i2c_device_config** in device tree with same **core_base_addr** parameter, and take it from there.
 ---
-11. To get **scl_encoding** - open mainline [.dtsi](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tree/arch/arm64/boot/dts) for device and look at **pinctrl-0** parameter of i2c node that you can find by searching page for **@<core_base_addr + core_offset>**, then you copy something like **hub_i2c5_data_clk** and search 
+11. To get **scl_encoding** - open mainline [.dtsi](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tree/arch/arm64/boot/dts) for device and look at **pinctrl-0** parameter of i2c node that you can find by searching page for **@<core_base_addr + core_offset>**, then you copy something like **hub_i2c5_data_clk/qup_i2c10_data_clk** and search 
 page for it, you will find node with same name, then you look at **pins** parameter and take number after **gpio** after **","**
 then take this [Python Script](https://gist.github.com/jiganomegsdfdf/92adce678a69126dcf5699d0fafff1e3) and run it, paste this number **(only number)** into script when it ask for it and press enter.
 12. To get **sda_encoding** - follow same steps as **scl_encoding**
