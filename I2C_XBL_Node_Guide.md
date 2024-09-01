@@ -1,8 +1,12 @@
 # Half-noob guide "How-To add I2C node into XBL DT?"
 #### To check "almost always" values - look at the other present nodes in your XBL DT.
 ---
-1. To get **"@*"** - open mainline [.dtsi](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tree/arch/arm64/boot/dts) for device and search for i2c node by searching page for **"@<core_base_addr + core_offset>"**, then look for parent of this i2c node and count his children from 0 to your node **(including your node)**
-<br>Also, name of your node will be i2c_device_config_**"Same number as reg/@**
+1. To get **"@*"** - open mainline [.dtsi](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tree/arch/arm64/boot/dts) for device and search for i2c node by searching page for **"@<core_base_addr + core_offset>"**, then look for parent of this i2c node and count his children from 0 to your node **(including your node)**, do not count any nodes other nodes that not i2c **(spi/uart/etc)**
+<br><br>if core_base_addr = <0x900000>, @* = 0x1 + count
+<br>if core_base_addr = <0x800000>, @* = 0x13 + count
+<br>if core_base_addr = <0xA00000>, @* = 0xF + count
+Also, name of your node will be i2c_device_config_**"Same number as reg/@**
+---
 2. To get **"reg"** - you need to look at number after **"@"** in your **i2c_device_config_*** node
 ---
 3. To get **"qupv3_instance"** - you need to look at **core_base_addr**, 
