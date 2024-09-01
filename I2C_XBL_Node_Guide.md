@@ -12,7 +12,7 @@
 ---
 4. **core_index** value is same as **reg/@**
 5. To get **se_index** - look at <strong>S*</strong> number inside of **se_clock**, where * - some number
-6. To get **gpi_index** - you can only use one-by-one method, from 0 to any number
+6. **gpi_index** - same as **se_index**
 ---
 7. **core_irq** almost always = **00**
 8. **polled_mode** almost always = **01**
